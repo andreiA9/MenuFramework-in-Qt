@@ -1,0 +1,28 @@
+/YourProject
+├── CMakeLists.txt
+├── BuildManager
+│   ├── CMakeLists.txt
+│   ├── include
+│   │   ├── GccTool.h
+│   │   └── GccHelper.h
+│   └── src
+│       ├── GccTool.cpp
+│       └── GccHelper.cpp
+├── Resources
+│   ├── CompileFolder
+│   │   └── main.cpp
+│   ├── RecompileFolder
+│   │   ├── main.cpp
+│   │   ├── header.hpp
+│   │   └── source.cpp
+│   ├── ExecutableFolder
+│   │   ├── main.cpp
+│   │   ├── header.hpp
+│   │   └── source.cpp
+│   └── LibraryFolder
+│       ├── main.cpp
+│       ├── header.hpp
+│       └── source.cpp
+└── main
+    └── main.cpp
+
