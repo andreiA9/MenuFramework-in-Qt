@@ -1,0 +1,16 @@
+! DO NOT USE OPERATOR
+PERFORMER -> performs OPERATIONS
+
+Here are several alternative suggestions that convey the intent more clearly and are more specific to the tasks at hand:
+
+Processor: Indicates the class processes data or performs processing operations.
+Executor: Implies execution of a set of operations or commands.
+Handler: General and can be used when the class deals with the execution of different kinds of actions.
+Manager: Suitable when the class is in charge of orchestrating multiple operations or managing the workflow of operations.
+Evaluator: Good for a class that evaluates expressions or conditions and makes decisions based on those evaluations.
+Performer: Conveys the idea that the class performs a series of operations.
+TaskRunner: Indicates that the class is responsible for running a series of tasks or operations.
+OperationManager: Similar to Manager, but more specifically focused on operations.
+ActionExecutor: Combines action and execution, indicating that the class is responsible for executing specific actions.
+GENERATOR = COMPOSE STRINGS
+COMPOSER = creates, arranges, or combines elements

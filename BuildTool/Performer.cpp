@@ -1,51 +1,53 @@
 // local project headers
 // ----------------------
-#include "GccController.h"
-#include "GccCommandGenerator.h"
+#include "Performer.h"
+#include "Helper.h"
 
 // standard C/C++ headers
 // ----------------------
-#include <QProcess>
-#include <QFileInfo>
-#include <QDateTime>
 #include <QDebug>
-#include <QDirIterator>
 
-bool GccController::compileFile(const QString& command)
+bool Performer::compileFile(const QString& command)
 {
     qDebug() << "executing" << command;
 
     return true;
 }
 
-bool GccController::recompileFileIfModified(const QString& command)
-{
-    qDebug() << "executing" << command;
-    
-    return true;
-}
-
-bool GccController::buildExecutable(const QString& command)
+bool Performer::recompileFileIfModified(const QString& command)
 {
     qDebug() << "executing" << command;
 
     return true;
 }
 
-bool GccController::createLibrary(const QString& command)
+bool Performer::buildExecutable(const QString& command)
 {
     qDebug() << "executing" << command;
 
     return true;
 }
 
-bool GccController::performOperation(int selection)
+bool Performer::createLibrary(const QString& command)
+{
+    qDebug() << "executing" << command;
+
+    return true;
+}
+
+bool Performer::prepareOperation(int selection)
+{
+    Q_UNUSED(selection);
+    return true;
+}
+
+bool Performer::performOperation(int selection)
 {
     switch (selection)
     {
-        case BuildOperation::Compile:
+        case Operation::Compile:
         {
-            QString command = GccCommandGenerator::generateCompileCommand();
+            QString command = Helper::generateCompileCommand();
             qDebug() << "Compile command:" << command;
             if (!compileFile(command))
             {
@@ -54,9 +56,9 @@ bool GccController::performOperation(int selection)
 
             break;
         }
-        case BuildOperation::Recompile:
+        case Operation::Recompile:
         {
-            QString command = GccCommandGenerator::generateRecompileCommand();
+            QString command = Helper::generateRecompileCommand();
             qDebug() << "Recompile command:" << command;
             if (recompileFileIfModified(command))
             {
@@ -64,9 +66,9 @@ bool GccController::performOperation(int selection)
             }
             break;
         }
-        case BuildOperation::Build:
+        case Operation::Build:
         {
-            QString command = GccCommandGenerator::generateBuildCommand();
+            QString command = Helper::generateBuildCommand();
             qDebug() << "Build command:" << command;
             if (buildExecutable(command))
             {
@@ -74,9 +76,9 @@ bool GccController::performOperation(int selection)
             }
             break;
         }
-        case BuildOperation::GenerateLib:
+        case Operation::GenerateLib:
         {
-            QString command = GccCommandGenerator::generateLibraryCreationCommand();
+            QString command = Helper::generateLibraryCreationCommand();
             qDebug() << "Library creation command:" << command;
             if (createLibrary(command))
             {

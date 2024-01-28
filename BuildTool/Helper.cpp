@@ -1,28 +1,28 @@
 // local project headers
 // ----------------------
-#include "GccCommandGenerator.h"
+#include "Helper.h"
 
 // standard C/C++ headers
 // ----------------------
 #include <QFileInfo>
 #include <QDebug>
 
-QString GccCommandGenerator::generateCompileCommand()
+QString Helper::generateCompileCommand()
 {
     return QString("gcc -c file.cpp");
 }
 
-QString GccCommandGenerator::generateRecompileCommand()
+QString Helper::generateRecompileCommand()
 {
     return QString("gcc -c file.cpp");
 }
 
-QString GccCommandGenerator::generateBuildCommand()
+QString Helper::generateBuildCommand()
 {
     return QString("gcc file.cpp -o file");
 }
 
-QString GccCommandGenerator::generateLibraryCreationCommand()
+QString Helper::generateLibraryCreationCommand()
 {
     return QString("gcc lib");
 }

@@ -4,7 +4,7 @@
 // local project headers
 // ----------------------
 #include "Menu.h"
-#include "GccController.h"
+#include "Controller.h"
 
 // standard C/C++ headers
 // ----------------------
@@ -16,7 +16,7 @@ public:
 
 private:
     Menu m_menu;
-    GccController m_gccController;
+    Controller m_controller;
 };
 
 #endif // BUILD_MANAGER_H

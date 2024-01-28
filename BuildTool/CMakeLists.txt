@@ -2,11 +2,12 @@ set(Qt5_Application_Components Core Widgets REQUIRED)
 find_package(Qt5 COMPONENTS ${Qt5_Application_Components})
 
 set(BuildTool_src
-    GccController.cpp
-    GccController.h
-    GccCommandGenerator.cpp
-    GccCommandGenerator.h
-    Process.h
+    Controller.cpp
+    Controller.h
+    Performer.cpp
+    Performer.h
+    Helper.cpp
+    Helper.h
     )
 
 add_library(BuildTool_static STATIC

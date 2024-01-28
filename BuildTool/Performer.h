@@ -1,24 +1,18 @@
-#ifndef GCC_CONTROLLER_H
-#define GCC_CONTROLLER_H
+#ifndef PERFORMER_H
+#define PERFORMER_H
 
 // local project headers
 // ----------------------
-#include "Process.h"
 
 // standard C/C++ headers
 // ----------------------
-#include <QString>
-#include <QStringList>
-#include <QDir>
-#include <QMap>
-#include <QTimer>
+#include <QObject>
 
-class GccController : public QObject
+class Performer
 {
-    Q_OBJECT
 
 public:
-    enum BuildOperation
+    enum Operation
     {
         Compile = 1,
         Recompile = 2,
@@ -26,9 +20,9 @@ public:
         GenerateLib = 4
     };
 
-    GccController() = default;
+    Performer() = default;
 
-    ~GccController() = default;
+    ~Performer() = default;
 
     // Compiles a single source file into an object file.
     bool compileFile(const QString& command);
@@ -42,14 +36,12 @@ public:
     // Creates a library from a list of object files.
     bool createLibrary(const QString& command);
 
+    bool prepareOperation(int selection);
+
     // This is the gcc action to be performed
     bool performOperation(int selection);
 
 private:
-    QDir m_workingDirectory;
-    QMap<BuildOperation, QString> m_OperationToPathMap;
-    QTimer* m_lastModifiedTimer;
-    Process m_process;
 };
 
-#endif // GCC_CONTROLLER_H
+#endif // PERFORMER_H

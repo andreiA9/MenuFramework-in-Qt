@@ -1,5 +1,5 @@
-#ifndef GCC_COMMAND_GENERATOR_H
-#define GCC_COMMAND_GENERATOR_H
+#ifndef HELPER_H
+#define HELPER_H
 
 // local project headers
 // ----------------------
@@ -8,7 +8,7 @@
 // ----------------------
 #include <QString>
 
-class GccCommandGenerator
+class Helper
 {
 public:
     // Generate GCC command for compiling source files
@@ -24,4 +24,4 @@ public:
     static QString generateLibraryCreationCommand();
 };
 
-#endif // GCC_COMMAND_GENERATOR_H
+#endif // HELPER_H
